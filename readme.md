@@ -1,10 +1,9 @@
 # Flask
 
-[Página atual](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-vi-profile-page-and-avatars)
+[Página atual](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-ii-templates)
 
 ## Instânciar o flask no arquivo __init__.py do app
 
-* Importar a classe `Config` do arquivo `config.py`, localizado na raiz do projeto
 
 ```python
 # app/__init__.py
@@ -24,6 +23,8 @@ login = LoginManager(app) # inicializar o framework de autenticação
 from . import routes, models
 ```
 
+* Importar a classe `Config` do arquivo `config.py`, localizado na raiz do projeto
+
 ## Criar arquivo de configuração do app na raiz do projeto
 
 ```python
@@ -32,7 +33,25 @@ from . import routes, models
 import os
 
 class Config(object):
+    ...
     SECRET_KEY = os.environ.get('SECRET_KEY')
+    ...
+```
+
+## Criar modulo top-level de inicialização do projeto
+
+```python
+# microblog.py
+
+from app import app
+
+```
+
+Rodar `flask run` no terminal inicia o projeto
+
+```shell
+$ export FLASK_ENV=microblog
+$ flask run
 ```
 
 ## Dependências e suas funções
@@ -125,7 +144,7 @@ class Post(db.Model):
 from flask_login import UserMixin
 
 class User(UserMixin, db.Model):
-    # ...
+    ...
 
 ```
 
@@ -168,5 +187,5 @@ from . import app
 @app.route('/')
 @login_required
 def home():
-    return render_template('inde.html')
+    return render_template('index.html')
 ```
