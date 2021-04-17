@@ -1,6 +1,6 @@
 # Flask
 
-[Página atual](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-iii-web-forms)
+[Página atual](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-iv-database)
 
 ## Instânciar o flask no arquivo __init__.py do app
 
