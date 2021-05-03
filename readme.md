@@ -1,6 +1,6 @@
 # Flask
 
-[Página atual](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-iv-database)
+[Página atual](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-v-user-logins)
 
 ## Instânciar o flask no arquivo __init__.py do app
 
@@ -92,7 +92,7 @@ $ flask run
     SQLACHEMY_TRACK_MODIFICATIONS = False
 ```
 
-* Todas a classes modelos vão herdar da classe `db.Model`
+* Todas a classes modelos vão herdar da classe `db.Model`(db=instancia do banco de dados, instanciado no arquivo `__init__.py`)
 
 * Os atributos são do tipo da classe `db.Column`, passando o tipo real pelo construtor dessa classe
 
@@ -128,7 +128,7 @@ class Post(db.Model):
 
 ```
 
-* O comando `flask db init` cria o repositorio de `migrations`
+* O comando `flask db init` cria o repositorio de `migrations`(Feito na etapa de configuração do projeto)
 
 * O comando `flask db migrate -m "<mensagem>"` cria uma `migration`
 
